@@ -1,0 +1,51 @@
+﻿/****** 개체: Table [dbo].[BOOK] 스크립트 날짜: 2016-07-13 오전 5:10:50 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [BOOK] (
+    [IDX]          INT          IDENTITY (1, 1) NOT NULL,
+    [TITLE]        VARCHAR (50) NOT NULL,
+    [WRITER]       VARCHAR (20) NOT NULL,
+    [PUBLISH_DATE] DATETIME     NOT NULL,
+    [BOOK_TYPE]    SMALLINT     NOT NULL,
+    [RENT_COST]    MONEY        NULL
+);
+
+
+/****** 개체: Table [dbo].[CUSTOMER] 스크립트 날짜: 2016-07-13 오전 5:11:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [CUSTOMER] (
+    [IDX]     INT          IDENTITY (1, 1) NOT NULL,
+    [NAME]    VARCHAR (20) NOT NULL,
+    [TEL]     VARCHAR (15) NOT NULL,
+    [RRN]     VARCHAR (14) NOT NULL,
+    [EMAIL]   VARCHAR (20) NULL,
+    [ADDRESS] NCHAR (10)   NULL
+);
+
+
+/****** 개체: Table [dbo].[RENTAL] 스크립트 날짜: 2016-07-13 오전 5:12:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [RENTAL] (
+    [IDX]             INT      IDENTITY (1, 1) NOT NULL,
+    [RENT_START_DAY]  DATETIME NOT NULL,
+    [RENT_END_DAY]    DATETIME NOT NULL,
+    [RENT_TOTAL_COST] MONEY    NOT NULL,
+    [CUSTOMER_IDX]    INT      NOT NULL,
+    [BOOK_IDX]        INT      NOT NULL
+);
+
+
